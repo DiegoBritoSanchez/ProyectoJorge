@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Averia extends Model
 {
     use HasFactory;
+    public function incidencia()
+    {
+        return $this->belongsTo(Incidencia::class);
+    }
 }

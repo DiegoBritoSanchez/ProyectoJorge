@@ -8,5 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Aula extends Model
 {
     use HasFactory;
-    
+    public function alumno()
+    {
+        return $this->belongsTo(Alumno::class);
+    }
+    public function incidencia()
+    {
+        return $this->belongsTo(Incidencia::class);
+    }
 }

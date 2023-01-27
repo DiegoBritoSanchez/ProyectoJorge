@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamps();
             $table->text('Observaciones');
             $table->foreign(['idAula', 'idOrdenador'])->references(['idAula', 'idOrdenador'])->on('aulas')->onDelete('cascade');
-            $table->foreign('idProfesor')->references('id')->on('profesors')->onDelete('cascade');
+            $table->foreign('idProfesor')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('idAveria')->references('id')->on('averias')->onDelete('cascade');
         });
     }
