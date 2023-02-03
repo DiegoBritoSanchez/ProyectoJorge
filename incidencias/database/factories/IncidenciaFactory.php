@@ -19,12 +19,15 @@ class IncidenciaFactory extends Factory
      */
     public function definition()
     {
+        $idAula = Aula::all()->random()->idAula;
+        $idOrdenador = Aula::all()->where('idAula', $idAula)->random()->idOrdenador;
+
         return [
-            'idAula' =>Aula::all()->random()->id,
-            'idOrdenador' =>Aula::all()->random()->idOrdenador,
-             'idProfersor' =>User::all()->random()->id,
-             'idAveria'=>Averia::all()->random()->idAveria,
-             'observaciones'=> fake()->text(),
+            'idAula' => $idAula,
+            'idOrdenador' => $idOrdenador,
+            'idProfesor' => User::all()->random()->id,
+            'idAveria' => Averia::all()->random()->id,
+            'observaciones' => fake()->text(),
         ];
     }
 }

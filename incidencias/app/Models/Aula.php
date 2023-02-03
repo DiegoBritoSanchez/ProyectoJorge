@@ -10,7 +10,7 @@ class Aula extends Model
     use HasFactory;
     public function alumno()
     {
-        return $this->belongsTo(Alumno::class);
+        return $this->hasMany(Alumno::class);
     }
     public function incidencia()
     {

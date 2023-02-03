@@ -10,6 +10,6 @@ class Alumno extends Model
     use HasFactory;
     public function aulas()
     {
-        return $this->hasMany(Aula::class);
+        return $this->belongsTo(Aula::class);
     }
 }
